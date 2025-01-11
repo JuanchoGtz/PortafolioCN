@@ -143,14 +143,30 @@ footer {
 /* Portada (Hero) */
 .hero {
     position: relative;
-    height: 100vh; /* Ocupa toda la pantalla */
-    background: url('public/imgs/Portada.jpg') no-repeat center center/cover; /* Imagen de fondo */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin perder proporción */
+    z-index: -1; /* Envía la imagen detrás del contenido */
+}
+
+.hero-content {
+    position: relative;
+    color: #ffffff;
+    text-align: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    color: #ffffff;
-    font-family: 'Arial', sans-serif;
+    height: 100%;
+    z-index: 1; /* Asegura que el contenido esté delante de la imagen */
 }
 
 .hero-content h1 {
@@ -175,4 +191,17 @@ footer {
 .arrow-down:hover {
     transform: translateY(10px); /* Mueve la flecha hacia abajo al hacer hover */
 }
+/* Oculta elementos inicialmente */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px); /* Mueve hacia abajo */
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Animación suave */
+}
+
+/* Aparece con animación */
+.visible {
+    opacity: 1;
+    transform: translateY(0); /* Vuelve a su posición original */
+}
+
 

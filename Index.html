@@ -9,12 +9,15 @@
 <body>
     <!-- Portada -->
     <section id="hero" class="hero">
+        <img src="public/imgs/Portada.jpg" alt="Fondo de portada" class="hero-image">
         <div class="hero-content">
-            <h1>¡Bienvenido a mi portafolio!</h1>
-            <p>Descubre mis habilidades, proyectos y experiencia profesional.</p>
-            <div class="arrow-down" onclick="scrollToSection('profile')">&#8595;</div>
+            <h1 id="hero-title" class="hidden">¡Bienvenido a mi portafolio!</h1>
+            <p id="hero-paragraph" class="hidden">Descubre mis habilidades, proyectos y experiencia profesional.</p>
+            <div class="arrow-down hidden" id="hero-arrow" onclick="scrollToSection('profile')">&#8595;</div>
         </div>
     </section>
+
+
 
     <!-- Menú de Navegación -->
     <nav class="navbar">
