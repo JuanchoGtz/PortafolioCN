@@ -1,4 +1,6 @@
 /* styles.css */
+
+/* Estilos generales */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -14,76 +16,87 @@ body {
     padding: 2rem 0;
 }
 
+/* Menú de Navegación */
 .navbar {
     background: #7720b7;
     color: white;
     padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
 }
 
 .navbar h1 {
-    display: inline;
+    margin: 0;
+    font-size: 1.5rem;
 }
 
 .navbar ul {
-    float: right;
     list-style: none;
+    display: flex;
+    gap: 1rem; /* Espaciado entre los enlaces */
+    margin: 0;
+    padding: 0;
 }
 
 .navbar li {
-    display: inline;
-    margin: 0 10px;
+    margin: 0;
 }
 
 .navbar a {
     color: white;
     text-decoration: none;
 }
+
 .navbar ul li a {
-    transition: all 0.3s ease; /* Suaviza la transición del hover */
+    transition: all 0.3s ease;
 }
 
 .navbar ul li a:hover {
-    background-color: #ffffff; /* Fondo blanco al hacer hover */
-    color: #9e33ec; /* Cambia el texto al color principal */
-    padding: 0.5rem 1rem; /* Añade un poco de espacio al enlace durante el hover */
-    border-radius: 5px; /* Redondea las esquinas */
-    text-decoration: none; /* Quita el subrayado */
+    background-color: #ffffff;
+    color: #9e33ec;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
 }
 
-
+/* Sección */
 section {
     padding: 4rem 0;
 }
 
+/* Títulos */
 h2 {
     color: #7720b7;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
-.skills ul, .aptitudes ul {
+/* Listas */
+.skills ul,
+.aptitudes ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
-.skills li, .aptitudes li {
+.skills li,
+.aptitudes li {
     background: #7720b7;
     color: white;
     margin: 0.5rem 0;
     padding: 0.5rem;
     border-radius: 15px;
-}
-
-footer {
     text-align: center;
-    background: #333;
-    color: white;
-    padding: 1rem 0;
 }
 
+/* Imagen de perfil */
 .profile-content {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
 }
 
 .profile-picture {
@@ -93,7 +106,16 @@ footer {
     border: 2px solid #7720b7;
     object-fit: cover;
 }
-/* Estilos base de los enlaces */
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #333;
+    color: white;
+    padding: 1rem 0;
+}
+
+/* Tooltip */
 .school-link {
     position: relative;
     color: #9e33ec;
@@ -105,12 +127,11 @@ footer {
     text-decoration: underline;
 }
 
-/* Tooltip oculto por defecto */
 .tooltip {
     visibility: hidden;
     opacity: 0;
     position: absolute;
-    bottom: 100%; /* Coloca el tooltip encima del enlace */
+    bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
     background-color: #333;
@@ -123,11 +144,10 @@ footer {
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Flecha del tooltip */
 .tooltip::after {
     content: '';
     position: absolute;
-    top: 100%; /* Apunta hacia abajo */
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
     border-width: 5px;
@@ -135,15 +155,15 @@ footer {
     border-color: #333 transparent transparent transparent;
 }
 
-/* Mostrar el tooltip al hacer hover en el enlace */
 .school-link:hover .tooltip {
     visibility: visible;
     opacity: 1;
 }
-/* Portada (Hero) */
+
+/* Portada */
 .hero {
     position: relative;
-    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -153,8 +173,8 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta la imagen sin perder proporción */
-    z-index: -1; /* Envía la imagen detrás del contenido */
+    object-fit: cover;
+    z-index: -1;
 }
 
 .hero-content {
@@ -166,7 +186,7 @@ footer {
     justify-content: center;
     align-items: center;
     height: 100%;
-    z-index: 1; /* Asegura que el contenido esté delante de la imagen */
+    z-index: 1;
 }
 
 .hero-content h1 {
@@ -189,19 +209,71 @@ footer {
 }
 
 .arrow-down:hover {
-    transform: translateY(10px); /* Mueve la flecha hacia abajo al hacer hover */
+    transform: translateY(10px);
 }
+
 /* Oculta elementos inicialmente */
 .hidden {
     opacity: 0;
-    transform: translateY(20px); /* Mueve hacia abajo */
-    transition: opacity 0.8s ease, transform 0.8s ease; /* Animación suave */
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* Aparece con animación */
 .visible {
     opacity: 1;
-    transform: translateY(0); /* Vuelve a su posición original */
+    transform: translateY(0);
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .profile-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .skills li,
+    .aptitudes li {
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar h1 {
+        font-size: 1.2rem;
+    }
+
+    .navbar ul {
+        gap: 0.3rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .profile-picture {
+        width: 120px;
+        height: 120px;
+    }
+}
+
 
 
