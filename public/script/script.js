@@ -35,3 +35,42 @@ function showHeroContent() {
 
 // Ejecuta la función cuando la página haya cargado
 window.onload = showHeroContent;
+
+document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.getElementById("navbar");
+    const heroArrow = document.getElementById("hero-arrow");
+    let lastScrollY = window.scrollY;
+    let hideTimeout;
+
+    // Inicialmente oculta el menú
+    navbar.style.transform = "translateY(-100%)";
+    navbar.style.transition = "transform 0.3s";
+
+    // Función para mostrar el menú
+    const showNavbar = () => {
+        navbar.style.transform = "translateY(0)";
+        clearTimeout(hideTimeout); // Limpia cualquier temporizador previo
+        hideTimeout = setTimeout(() => {
+            navbar.style.transform = "translateY(-100%)";
+        }, 3000); // Oculta después de 3 segundos de inactividad
+    };
+
+    // Hacer clic en la flecha despliega el menú
+    heroArrow.addEventListener("click", () => {
+        showNavbar();
+        window.scrollTo({ top: document.getElementById("profile").offsetTop, behavior: "smooth" });
+    });
+
+    // Mostrar el menú al desplazarse hacia arriba
+    window.addEventListener("scroll", () => {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY < lastScrollY) {
+            // Desplazamiento hacia arriba
+            showNavbar();
+        }
+
+        lastScrollY = currentScrollY;
+    });
+});
+
