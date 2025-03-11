@@ -227,6 +227,10 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+.Escuelas{
+    width: 1080px;
+    height: 250px;
+}
 
 /* Media Queries */
 @media (max-width: 768px) {
