@@ -74,3 +74,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    let bars = document.querySelectorAll(".fill");
+    bars.forEach(bar => {
+        let width = bar.style.width;
+        bar.style.width = "0"; // Reset para animación
+        setTimeout(() => {
+            bar.style.width = width; // Aplica el valor real con animación
+        }, 200);
+    });
+});
+
