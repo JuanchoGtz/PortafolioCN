@@ -1,8 +1,8 @@
 function togglePlay(btn, id) {
     const audio = document.getElementById(id);
-    const progressBar = document.getElementById('progressBar1');
-    const currentTime = document.getElementById('currentTime1');
-    const duration = document.getElementById('duration1');
+    const progressBar = document.getElementById(`progressBar${id.charAt(id.length - 1)}`);
+    const currentTime = document.getElementById(`currentTime${id.charAt(id.length - 1)}`);
+    const duration = document.getElementById(`duration${id.charAt(id.length - 1)}`);
 
     if (audio.paused) {
         audio.play();
