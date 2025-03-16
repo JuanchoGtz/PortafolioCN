@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Pasión por la Música</title>
+    <link rel="stylesheet" href="public/css/musica.css">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header class="musica-header">
+        <h1>Mi Lado Musical </h1>
+        <p>Soy un apasionado de la música, toco guitarra, bajo. Aquí comparto algunos de mis covers y creaciones.</p>
+    </header>
+
+    <section class="musica-foto">
+        <img src="public/imgs/imgMusica.jpg" alt="Juancho músico">
+    </section>
+
+    <section class="musica-audios">
+        <h2>🎶 Mis Covers y Creaciones</h2>
+
+        <div class="audio-item">
+            <h3>Cover 1 - [Nombre de la canción]</h3>
+            <div class="custom-player">
+                <audio id="audio1" src="public/audio/mis-covers/cover1.mp3"></audio>
+                <button onclick="togglePlay(this, 'audio1')">▶️</button>
+                <span id="currentTime1">0:00</span> / <span id="duration1">0:00</span>
+                <input type="range" id="progressBar1" value="0" onchange="seekAudio(this, 'audio1')">
+            </div>
+        </div>
+        
+
+        <div class="audio-item">
+            <h3>Cover 2 - [Nombre de la canción]</h3>
+            <div class="custom-player">
+                <audio id="audio1" src="public/audio/mis-covers/cover1.mp3"></audio>
+                <button onclick="togglePlay(this, 'audio1')">▶️</button>
+                <span id="currentTime1">0:00</span> / <span id="duration1">0:00</span>
+                <input type="range" id="progressBar1" value="0" onchange="seekAudio(this, 'audio1')">
+            </div>
+        </div>
+
+        <!-- Puedes repetir más audios -->
+    </section>
+
+    <footer class="musica-footer">
+        <p>&copy; 2025 Juan Antonio Gutiérrez | Proyecto Musical</p>
+        <a href="index.html">Volver a la Página Principal</a>
+    </footer>
+    <script src="public/script/musica.js"></script>
+</body>
+</html>
