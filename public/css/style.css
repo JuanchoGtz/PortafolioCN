@@ -17,56 +17,66 @@ body {
     margin: 0 auto;
     padding: 2rem 0;
 }
+
+
+
+/* Menú de Navegación */
+
+
+/* Estilo base del nav */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
+    padding: 1rem 0;
     background: #7720b7; /* Asegura visibilidad */
     color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
 }
 
-
-/* Menú de Navegación */
-
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
 .navbar h1 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
-    gap: 1rem; /* Espaciado entre los enlaces */
+    gap: 1.5rem;
     margin: 0;
     padding: 0;
 }
 
-.navbar li {
-    margin: 0;
-}
-
-.navbar a {
-    color: white;
-    text-decoration: none;
-}
-
 .navbar ul li a {
-    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
 .navbar ul li a:hover {
-    background-color: #ffffff;
-    color: #9e33ec;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    text-decoration: none;
+    color: #f4f4f4;
 }
 
+/* Botón hamburguesa oculto por defecto */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
 /* Sección */
 section {
     padding: 4rem 0;
@@ -229,10 +239,15 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
-.Escuelas{
-    width: 1080px;
-    height: 250px;
+.Escuelas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    border-radius: 10px; /* Opcional: bordes redondos para estilo */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* Sombra suave opcional */
 }
+
 footer a{
         text-decoration: none;
         color: #ffffff;
@@ -304,12 +319,27 @@ footer a:hover{
 
 /* Media Queries */
 @media (max-width: 768px) {
-    .navbar ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
+    .menu-toggle {
+        display: block;
     }
 
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        display: none; /* Oculto por defecto */
+        margin-top: 1rem;
+        background-color: #6a0dad;
+        padding: 1rem 0;
+    }
+
+    .navbar ul.show {
+        display: flex; /* Mostrar cuando tenga clase 'show' */
+    }
+
+    .navbar ul li {
+        width: 100%;
+        text-align: center;
+    }
     .profile-content {
         flex-direction: column;
         text-align: center;
@@ -332,11 +362,11 @@ footer a:hover{
 
 @media (max-width: 480px) {
     .navbar h1 {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 
     .navbar ul {
-        gap: 0.3rem;
+        gap: 0.5rem;
     }
 
     .hero-content h1 {
